@@ -18,4 +18,8 @@ public class SplashScreen extends BaseScreen {
         return versionText.getText();
     }
 
+    public AuthenticationScreen swithchToAuthScreen(){
+        return new AuthenticationScreen(driver);
+    }
+
 }
