@@ -2,7 +2,8 @@ package helpers;
 
 import java.util.Random;
 
-public class PasswordStringGenerator {public static String generateString() {
+public class PasswordStringGenerator {
+    public static String generateString() {
     StringBuilder stringBuilder = new StringBuilder();
 
     // Генерируем 3 символа в верхнем регистре
@@ -25,7 +26,7 @@ public class PasswordStringGenerator {public static String generateString() {
     }
 
     // Генерируем один или более спецсимволов ([]!$_)
-    String specialChars = "[]!$_-";
+    String specialChars = "@!$#*";
     int specialCharsCount = 1 + random.nextInt(3); // Генерируем от 1 до 3 спецсимволов
     for (int i = 0; i < specialCharsCount; i++) {
         int index = random.nextInt(specialChars.length());

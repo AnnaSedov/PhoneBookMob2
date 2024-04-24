@@ -10,20 +10,15 @@ import java.util.List;
 public class AuthenticationScreen extends BaseScreen{
     public  AuthenticationScreen(AppiumDriver<MobileElement> driver){
         super(driver);
-
-
-
-
-
     }
     //  @FindBy(xpath = ="//*@resource-id='com.sheygam.contactapp'")
-    @FindBy(xpath = "//*[@resource-id='com.sheygam.contactapp:id/action_bar/android.widget.TextView']")
+    @FindBy(xpath = "//*[@resource-id='com.sheygam.contactapp:id/action_bar']/android.widget.TextView")
     MobileElement titleText;
     @FindBy(id="com.sheygam.contactapp:id/inputEmail")
     MobileElement inputEmailField;
     @FindBy(id="com.sheygam.contactapp:id/inputPassword")
     MobileElement inputPasswordField;
-    @FindBy(id="com.sheygam.contactapp:id/registrationBtn")
+    @FindBy(id="com.sheygam.contactapp:id/regBtn")
     MobileElement regButton;
     @FindBy(id="com.sheygam.contactapp:id/loginBtn")
     MobileElement loginButton;
@@ -44,7 +39,7 @@ public class AuthenticationScreen extends BaseScreen{
        // List<MobileElement> list= driver.findElement(By.xpath("//*[@resource-id='android:id/alertTitle']"));
         List<MobileElement> list = driver.findElements(By.xpath("//*[@resource-id='android:id/alertTitle']"));
         if(list.size()>0){
-            driver.findElement(By.xpath("//*[resource-id='android:id/button1']")).click();
+            driver.findElement(By.xpath("//*[@resource-id='android:id/button1']")).click();
             return (T) new AuthenticationScreen(driver);
         }
         return (T) new ContactListScreen(driver);
@@ -57,6 +52,7 @@ public class AuthenticationScreen extends BaseScreen{
         List<MobileElement> list=driver.findElements(By.id("android:id/alertTitle"));
         if(list.size()>0){
             driver.findElement(By.id("android:id/button1")).click();
+
             return (T) new AuthenticationScreen(driver);
         }else return (T) new ContactListScreen(driver);
     }

@@ -10,7 +10,7 @@ public class ContactListScreen extends BaseScreen{
         super(driver);
 
     }
-    @FindBy(xpath = "//*[@resource-id='com.sheygam.contactapp:id/action-bar']/android.widget.TextView")
+    @FindBy(xpath = "//*[@resource-id='com.sheygam.contactapp:id/action_bar']/android.widget.TextView")
     MobileElement titleText;
     @FindBy(xpath  ="//*[@content-desc='More options']")
     MobileElement moreOptions;
@@ -25,12 +25,14 @@ public class ContactListScreen extends BaseScreen{
 
     }
     public boolean isContactListPresent(){
-         return isElementPresent(titleText,"Contact");
+         return isElementPresent(titleText,"Contact list");
     }
     public AddNewContactScreen openNewContactForm(){
         waitForAnElement(addButton);
         addButton.click();
         return new AddNewContactScreen(driver);
     }
-//TODO find fields
+
+
+
 }
