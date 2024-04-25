@@ -17,6 +17,7 @@ public class RegistrationTest extends AppiumConfig implements TestHelpers {
 
         String newMail=EmailGenerator.generateEmail(2,2,2);
         String newPass=PasswordStringGenerator.generateString();
+        System.out.println("TEST "+newMail+" "+newPass);
         PropertiesWriterXML propertiesWriterXML=new PropertiesWriterXML(FILE_PATH);
         propertiesWriterXML.setProperties(EMAIL,newMail,false);
         propertiesWriterXML.setProperties(PASSWORD,newPass,false);
@@ -29,8 +30,8 @@ public class RegistrationTest extends AppiumConfig implements TestHelpers {
 
     //240424 hw negative registration
     @Test
-    public void registrationTestNegative(){
-        AuthenticationScreen authenticationScreen =new SplashScreen(driver).swithchToAuthScreen().fillEmailField(EmailGenerator.generateEmail(2,3,2)).fillPasswordField("111").clickByRegistrationButton();
+    public void registrationTestNegativeWrongEmail(){
+        AuthenticationScreen authenticationScreen =new SplashScreen(driver).swithchToAuthScreen().fillEmailField("1111").fillPasswordField(PasswordStringGenerator.generateString()).clickByRegistrationButton();
         Assert.assertTrue(authenticationScreen.isItAuthScreen());
     }
 
