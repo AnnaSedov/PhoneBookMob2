@@ -15,9 +15,9 @@ public class AddNewContactTest extends AppiumConfig implements TestHelpers {
         Contact contact=new Contact(NameAndLastNameGenerator.generateName(),
                 NameAndLastNameGenerator.generateLastName(), EmailGenerator.generateEmail(2,3,2),
                 AddressGenerator.generateAddress(),
-                PhoneNumberGenerator.generatePhoneNumber(),"");
-        new ContactListScreen(driver).openNewContactForm().fillTheForm(contact);//createContact()..isContactAdded()
-        Assert.assertTrue(true);
+                PhoneNumberGenerator.generatePhoneNumber(),"222");
+        ContactListScreen contactListScreen=new  ContactListScreen(driver).openNewContactForm().fillTheForm(contact).createContact();//.isContactAdded(contact);
+        Assert.assertTrue(contactListScreen.isContactAdded(contact));
     }
 
 }

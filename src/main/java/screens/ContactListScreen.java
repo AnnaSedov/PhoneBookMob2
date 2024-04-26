@@ -2,7 +2,13 @@ package screens;
 
 import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.MobileElement;
+import models.Contact;
+import org.openqa.selenium.By;
 import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+
+import java.util.List;
 
 public class ContactListScreen extends BaseScreen{
 
@@ -18,6 +24,12 @@ public class ContactListScreen extends BaseScreen{
     MobileElement logoutButton;
     @FindBy(xpath = "//*[@resource-id='com.sheygam.contactapp:id/add_contact_btn']")
     MobileElement addButton;
+//    @FindBy(xpath = "//*[@resource-id='com.sheygam.contactapp:id/rowContainer']")
+//    MobileElement container;
+
+    @FindBy(xpath = "//*[@resource-id='com.sheygam.contactapp:id/rowName']")
+    MobileElement rowName;
+
     public AuthenticationScreen logOut(){
         moreOptions.click();
         logoutButton.click();
@@ -34,5 +46,38 @@ public class ContactListScreen extends BaseScreen{
     }
 
 
+    public boolean isContactAdded(Contact contact) {
 
+        List<MobileElement> containers=driver.findElements(By.xpath("//*[@resource-id='com.sheygam.contactapp:id/rowName']"));
+ if(containers.size()>0){
+
+for(MobileElement container:containers){
+
+
+       waitForAnElement(container);
+        container.click();
+        MobileElement elementName=driver.findElement(By.xpath("//*[@resource-id='com.sheygam.contactapp:id/nameTxt']"));
+        String elementNameVal=elementName.getAttribute("value");
+          MobileElement elementLastName=driver.findElement(By.xpath("//[*@resource-id='com.sheygam.contactapp:id/lastNameTxt']"));
+          String elementLastNameVal=elementLastName.getAttribute("value");
+          MobileElement elementPhone=driver.findElement(By.xpath("//*[@resource-id='com.sheygam.contactapp:id/phoneTxt']"));
+          String elementPhoneVal=elementPhone.getAttribute("value");
+          MobileElement elementAddress=driver.findElement(By.xpath("//*[@resource-id='com.sheygam.contactapp:id/addressTxt']"));
+          String elementAddressVal=elementName.getAttribute("value");
+          MobileElement elementEmail=driver.findElement(By.xpath("//*[@resource-id='com.sheygam.contactapp:id/emailTxt']"));
+          String elementEmailVal=elementName.getAttribute("value");
+          MobileElement elementDescription=driver.findElement(By.xpath("//*[@resource-id='com.sheygam.contactapp:id/descTxt']"));
+          String elementDescriptionVal=elementName.getAttribute("value");
+          Contact listContact= new Contact();
+          listContact.setName(elementNameVal);
+          listContact.setLastName(elementLastNameVal);
+          listContact.setAddress(elementAddressVal);
+          listContact.setPhone(elementPhoneVal);
+          listContact.setDescriptions(elementDescriptionVal);
+          listContact.setEmail(elementEmailVal);
+          return listContact.equals(contact);}}
+
+        return false;
+
+    }
 }

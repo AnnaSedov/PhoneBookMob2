@@ -10,6 +10,7 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.time.Duration;
+import java.util.List;
 
 public class AddNewContactScreen extends BaseScreen{
 
@@ -33,7 +34,7 @@ public class AddNewContactScreen extends BaseScreen{
     MobileElement descriptionField;
     @FindBy(xpath = "//*[@resource-id='com.sheygam.contactapp:id/createBtn']")
     MobileElement createButton;
-    public void fillTheForm(Contact contact) {
+    public AddNewContactScreen fillTheForm(Contact contact) {
         nameField.sendKeys(contact.getName());
         lastNameField.sendKeys(contact.getLastName());
         if(contact.getPhone().length()>=10&&contact.getPhone().length()<=15) {
@@ -44,11 +45,20 @@ public class AddNewContactScreen extends BaseScreen{
         emailField.sendKeys(contact.getEmail());
         addressField.sendKeys(contact.getAddress());
         descriptionField.sendKeys(contact.getDescriptions());
+        return this;
+
+    }
+
+    public <T extends BaseScreen> T createContact(){
         waitForAnElement(createButton);
-     
         createButton.click();
+        List<MobileElement> list=driver.findElements(By.xpath("//*[@resource-id='android:id/alertTitle']"));
+        if(list.size()>0){
+            driver.findElement(By.xpath("//*[@resource-id='android:id/button1']")).click();
+            return (T) new AddNewContactScreen(driver);
+        }
+        return (T) new ContactListScreen(driver);
+
     }
-    public boolean isContactAdded(){
-        return true;
-    }
+
 }
