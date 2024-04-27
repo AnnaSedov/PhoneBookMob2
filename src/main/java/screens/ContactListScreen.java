@@ -7,6 +7,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import org.testng.annotations.Test;
 
 import java.util.List;
 
@@ -24,11 +25,7 @@ public class ContactListScreen extends BaseScreen{
     MobileElement logoutButton;
     @FindBy(xpath = "//*[@resource-id='com.sheygam.contactapp:id/add_contact_btn']")
     MobileElement addButton;
-//    @FindBy(xpath = "//*[@resource-id='com.sheygam.contactapp:id/rowContainer']")
-//    MobileElement container;
-
-    @FindBy(xpath = "//*[@resource-id='com.sheygam.contactapp:id/rowName']")
-    MobileElement rowName;
+//  
 
     public AuthenticationScreen logOut(){
         moreOptions.click();
@@ -48,9 +45,9 @@ public class ContactListScreen extends BaseScreen{
 
     public boolean isContactAdded(Contact contact) {
 
-        List<MobileElement> containers=driver.findElements(By.xpath("//*[@resource-id='com.sheygam.contactapp:id/rowName']"));
- if(containers.size()>0){
+        List<MobileElement> containers=driver.findElements(By.xpath("//*[@resource-id='com.sheygam.contactapp:id/rowContainer']"));
 
+        if(containers.size()>0){
 for(MobileElement container:containers){
 
 
