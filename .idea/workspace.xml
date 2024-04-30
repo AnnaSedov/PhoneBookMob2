@@ -5,9 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5128e6f4-4820-40e2-9fff-fbc0ef1d5cd3" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/config/TestData.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/tests/EditTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/tests/LoginDataProviderTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/tests/RemoveContactTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/screens/ContactListScreen.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/screens/ContactListScreen.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/data.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/data.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -42,8 +45,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Class" />
         <option value="Interface" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -63,25 +66,27 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Gradle.AddNewContactTest.addNewContact.executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.LoginTest.loginNegative.executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.LoginTest.loginPositive.executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.PhoneBookMob [:PasswordStringGenerator.main()].executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.RegistrationTest.registrationNewUserTest.executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.RegistrationTest.registrationTestNegative.executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.RegistrationTest.registrationTestNegativeWrongEmail.executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.SplashScreenTest.splashScreenCheckVersion.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
-    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/ProjectsLast/FromMichael/Web&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Gradle.AddNewContactTest.addNewContact.executor": "Run",
+    "Gradle.LoginDataProviderTest.loginTestNegative.executor": "Run",
+    "Gradle.LoginTest.loginNegative.executor": "Run",
+    "Gradle.LoginTest.loginPositive.executor": "Run",
+    "Gradle.PhoneBookMob [:PasswordStringGenerator.main()].executor": "Run",
+    "Gradle.RegistrationTest.registrationNewUserTest.executor": "Run",
+    "Gradle.RegistrationTest.registrationTestNegative.executor": "Run",
+    "Gradle.RegistrationTest.registrationTestNegativeWrongEmail.executor": "Run",
+    "Gradle.RemoveContactTest.removeContact.executor": "Run",
+    "Gradle.SplashScreenTest.splashScreenCheckVersion.executor": "Run",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "git-widget-placeholder": "master",
+    "ignore.virus.scanning.warn.message": "true",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/ProjectsLast/FromMichael/Web"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\97253\OneDrive\Documents\TelRan\Auto\Projects\PhoneBookMob\src\main\java\helpers" />
@@ -91,7 +96,7 @@
       <recent name="models" />
     </key>
   </component>
-  <component name="RunManager" selected="Gradle.AddNewContactTest.addNewContact">
+  <component name="RunManager" selected="Gradle.RemoveContactTest.removeContact">
     <configuration name="AddNewContactTest.addNewContact" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
@@ -106,6 +111,30 @@
             <option value=":test" />
             <option value="--tests" />
             <option value="&quot;tests.AddNewContactTest.addNewContact&quot;" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <RunAsTest>true</RunAsTest>
+      <method v="2" />
+    </configuration>
+    <configuration name="LoginDataProviderTest.loginTestNegative" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":test" />
+            <option value="--tests" />
+            <option value="&quot;tests.LoginDataProviderTest.loginTestNegative&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -140,30 +169,6 @@
       <RunAsTest>true</RunAsTest>
       <method v="2" />
     </configuration>
-    <configuration name="LoginTest.loginPositive" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
-      <ExternalSystemSettings>
-        <option name="executionName" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$" />
-        <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" value="" />
-        <option name="taskDescriptions">
-          <list />
-        </option>
-        <option name="taskNames">
-          <list>
-            <option value=":test" />
-            <option value="--tests" />
-            <option value="&quot;tests.LoginTest.loginPositive&quot;" />
-          </list>
-        </option>
-        <option name="vmOptions" />
-      </ExternalSystemSettings>
-      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
-      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
-      <DebugAllEnabled>false</DebugAllEnabled>
-      <RunAsTest>true</RunAsTest>
-      <method v="2" />
-    </configuration>
     <configuration name="RegistrationTest.registrationNewUserTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
@@ -188,7 +193,7 @@
       <RunAsTest>true</RunAsTest>
       <method v="2" />
     </configuration>
-    <configuration name="RegistrationTest.registrationTestNegativeWrongEmail" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="RemoveContactTest.removeContact" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -201,7 +206,7 @@
           <list>
             <option value=":test" />
             <option value="--tests" />
-            <option value="&quot;tests.RegistrationTest.registrationTestNegativeWrongEmail&quot;" />
+            <option value="&quot;tests.RemoveContactTest.removeContact&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -214,11 +219,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Gradle.RemoveContactTest.removeContact" />
+        <item itemvalue="Gradle.LoginDataProviderTest.loginTestNegative" />
+        <item itemvalue="Gradle.LoginTest.loginNegative" />
         <item itemvalue="Gradle.AddNewContactTest.addNewContact" />
         <item itemvalue="Gradle.RegistrationTest.registrationNewUserTest" />
-        <item itemvalue="Gradle.LoginTest.loginNegative" />
-        <item itemvalue="Gradle.LoginTest.loginPositive" />
-        <item itemvalue="Gradle.RegistrationTest.registrationTestNegativeWrongEmail" />
       </list>
     </recent_temporary>
   </component>
