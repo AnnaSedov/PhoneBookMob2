@@ -14,17 +14,17 @@ public class RemoveContactTest extends AppiumConfig implements TestHelpers {
    @BeforeTest
    public void precondition(){
        ContactListScreen contactListScreen=new SplashScreen(driver).swithchToAuthScreen().fillEmailField(PropertiesReaderXML.getProperty(EMAIL)).fillPasswordField(PropertiesReaderXML.getProperty(PASSWORD)).clickByLoginButton();
-//TODO
+
    }
     @Test
     public void removeContact(){
-        ContactListScreen contactListScreen=new SplashScreen(driver).swithchToAuthScreen().fillEmailField(PropertiesReaderXML.getProperty(EMAIL)).fillPasswordField(PropertiesReaderXML.getProperty(PASSWORD)).clickByLoginButton();
 
         Contact contact=new Contact(NameAndLastNameGenerator.generateName(),
                 NameAndLastNameGenerator.generateLastName(), EmailGenerator.generateEmail(2,3,2),
                 AddressGenerator.generateAddress(),
                 PhoneNumberGenerator.generatePhoneNumber(),"222");
-        contactListScreen.openNewContactForm().fillTheForm(contact).createContact();
+        ContactListScreen contactListScreen=new  ContactListScreen(driver).openNewContactForm().fillTheForm(contact).createContact();//.isContactAdded(contact);
+
        Assert.assertTrue( contactListScreen.removeAContact().isContactRemoved());
 
     }

@@ -26,7 +26,7 @@ public class AuthenticationScreen extends BaseScreen{
     MobileElement errorText;
 
     public AuthenticationScreen fillEmailField(String email){
-        waitForAnElement(inputEmailField);//for first field usually
+        waitForAnElement(inputEmailField);
         inputEmailField.sendKeys(email);
         return this;
     }

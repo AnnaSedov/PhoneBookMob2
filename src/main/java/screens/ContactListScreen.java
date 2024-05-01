@@ -1,5 +1,7 @@
 package screens;
 
+import helpers.PropertiesReaderXML;
+import helpers.TestHelpers;
 import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.MobileElement;
 import io.appium.java_client.TouchAction;
@@ -14,7 +16,9 @@ import org.testng.annotations.Test;
 
 import java.util.List;
 
-public class ContactListScreen extends BaseScreen{
+import static helpers.TestHelpers.OLDMAIL;
+
+public class ContactListScreen extends BaseScreen implements TestHelpers {
 
     public ContactListScreen(AppiumDriver<MobileElement> driver) {
         super(driver);
@@ -39,6 +43,9 @@ public class ContactListScreen extends BaseScreen{
 
     @FindBy(xpath = "//*[@resource-id='com.sheygam.contactapp:id/emptyTxt']")
             MobileElement emptyTXT;
+
+    @FindBy(xpath = "//*[@resource-id='com.sheygam.contactapp:id/updateTxt']")
+    MobileElement updateTXT;
 
     String phoneNumber;
 //  
@@ -134,5 +141,20 @@ List<MobileElement> containers=driver.findElementsByClassName("android.widget.Te
 
     public boolean isNoContactMess() {
        return isElementPresent(emptyTXT,"No Contacts");
+    }
+
+    public EditContactScreen editFirstContact() {
+        waitForAnElement(addButton);
+        MobileElement contact=contacts.get(0);
+        Rectangle rectangle=contact.getRect();
+        int xStart=rectangle.getWidth()-10;
+        int y=rectangle.getY()+rectangle.getHeight()/2;
+        int xEnd=xStart-rectangle.getWidth()*6/8;
+        new TouchAction<>(driver).longPress(PointOption.point(xStart,y)).moveTo(PointOption.point(xEnd,y)).release().perform();
+
+        return new EditContactScreen(driver);
+    }
+    public boolean isContactEdit() {
+        return !PropertiesReaderXML.getProperty(OLDMAIL).equals(PropertiesReaderXML.getProperty(NEWMAIL));
     }
 }
